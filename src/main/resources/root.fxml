@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.petrolingus.infotechpracticetask.Controller">
    <children>
       <VBox HBox.hgrow="ALWAYS">
          <children>
-            <AreaChart>
+            <AreaChart fx:id="signalChart" createSymbols="false" legendVisible="false">
               <xAxis>
                 <NumberAxis side="BOTTOM" />
               </xAxis>
@@ -19,13 +17,21 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </AreaChart>
-            <AreaChart layoutX="10.0" layoutY="10.0">
+            <AreaChart fx:id="autocorrelationChart" createSymbols="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
                <xAxis>
                   <NumberAxis side="BOTTOM" />
                </xAxis>
                <yAxis>
                   <NumberAxis side="LEFT" />
                </yAxis>
+            </AreaChart>
+            <AreaChart fx:id="spectrumChart" legendVisible="false">
+              <xAxis>
+                <NumberAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
             </AreaChart>
          </children>
       </VBox>

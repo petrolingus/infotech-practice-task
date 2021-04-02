@@ -18,7 +18,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/root.fxml"));
 
         Scene scene = new Scene(root);
-//        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
         primaryStage.setTitle("Practice Task");
         primaryStage.setScene(scene);

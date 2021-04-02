@@ -1,0 +1,7 @@
+.default-color0.chart-area-symbol {
+    -fx-background-radius: 30px;
+}
+
+.default-color1.chart-area-symbol {
+    -fx-background-radius: 60px;
+}
