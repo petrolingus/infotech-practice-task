@@ -13,7 +13,7 @@ public class NoiseGenerator {
         this.signal = Arrays.copyOf(signal, signal.length);
     }
 
-    public double[] generate() {
+    public double[] generate(double noiseCoefficient) {
 
         double[] noise = new double[signal.length];
 
@@ -22,10 +22,17 @@ public class NoiseGenerator {
         }
 
         double noiseEnergy = calculateEnergy(noise);
+        double signalEnergy = calculateEnergy(signal);
 
+        double alpha = Math.sqrt((noiseCoefficient / 100) * signalEnergy / noiseEnergy);
 
+        double[] result = new double[signal.length];
 
-        return new double[100];
+        for (int i = 0; i < signal.length; i++) {
+            result[i] = signal[i] + alpha * noise[i];
+        }
+
+        return result;
     }
 
     private double calculateEnergy(double[] signal) {

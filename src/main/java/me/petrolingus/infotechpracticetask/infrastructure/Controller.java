@@ -82,7 +82,7 @@ public class Controller {
         signalChart.getData().add(signalSeries);
 
 
-        double[] autocorrelation = new double[128];
+        double[] autocorrelation = new double[256];
         for (int m = 0; m < autocorrelation.length; m++) {
             double value = 0;
             for (int i = 0; i < autocorrelation.length; i++) {
@@ -97,16 +97,16 @@ public class Controller {
         autocorrelationChart.getData().clear();
         autocorrelationChart.getData().add(autocorrelationSeries);
 
-        FastFourierTransformer fastFourierTransformer = new FastFourierTransformer(DftNormalization.STANDARD);
-        Complex[] complex = fastFourierTransformer.transform(autocorrelation, TransformType.FORWARD);
+//        FastFourierTransformer fastFourierTransformer = new FastFourierTransformer(DftNormalization.STANDARD);
+//        Complex[] complex = fastFourierTransformer.transform(autocorrelation, TransformType.FORWARD);
 
-        double[] spectrum = new double[complex.length];
-        for (int i = 0; i < spectrum.length; i++) {
-            spectrum[i] = complex[i].abs();
-        }
-        XYChart.Series<Number, Number> spectrumSeries = arrayToSeries(spectrum);
-        spectrumChart.getData().clear();
-        spectrumChart.getData().add(spectrumSeries);
+//        double[] spectrum = new double[complex.length];
+//        for (int i = 0; i < spectrum.length; i++) {
+//            spectrum[i] = complex[i].abs();
+//        }
+//        XYChart.Series<Number, Number> spectrumSeries = arrayToSeries(spectrum);
+//        spectrumChart.getData().clear();
+//        spectrumChart.getData().add(spectrumSeries);
 
         double[][] A1 = new double[autocorrelation.length][autocorrelation.length];
         for (int i = 0; i < autocorrelation.length; i++) {
