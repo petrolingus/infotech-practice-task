@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.petrolingus.infotechpracticetask.Controller">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1024.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.petrolingus.infotechpracticetask.infrastructure.Controller">
    <children>
       <VBox HBox.hgrow="ALWAYS">
          <children>
-            <AreaChart fx:id="signalChart" createSymbols="false" legendVisible="false">
+            <AreaChart fx:id="signalChart" animated="false" createSymbols="false" legendVisible="false">
               <xAxis>
                 <NumberAxis side="BOTTOM" />
               </xAxis>
@@ -35,6 +42,181 @@
             </AreaChart>
          </children>
       </VBox>
-      <VBox prefWidth="200.0" />
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" minWidth="300.0">
+         <content>
+            <VBox spacing="10.5">
+               <children>
+                  <TitledPane expanded="false" text="Параметры гармоник">
+                     <content>
+                        <VBox spacing="6.5">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Минимальная амплитуда" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="minAmplitudeField" prefWidth="100.0" text="1">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="27.0">
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Максимальная амплитуда" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="maxAmplitudeField" prefWidth="100.0" text="5">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Минимальная частота" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="minFrequencyField" prefWidth="100.0" text="1">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="27.0">
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Максимальная частота" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="maxFrequencyField" prefWidth="100.0" text="10">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Минимальная фаза" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="minPhaseField" prefWidth="100.0" text="0">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="27.0">
+                                       <children>
+                                          <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Максимальная фаза" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="maxPhaseField" prefWidth="100.0" text="0">
+                                             <font>
+                                                <Font name="JetBrains Mono Regular" size="11.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                     <font>
+                        <Font name="JetBrains Mono Bold" size="11.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane text="Параметры сигнала">
+                     <content>
+                        <VBox spacing="6.5">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label text="Количество семплов">
+                                       <font>
+                                          <Font name="JetBrains Mono Regular" size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="samplesCountField" text="1024">
+                                       <font>
+                                          <Font name="JetBrains Mono Regular" size="11.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="20.0" layoutY="20.0" spacing="4.0">
+                                 <children>
+                                    <Label text="Частота дискретизации">
+                                       <font>
+                                          <Font name="JetBrains Mono Regular" size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="samplingFrequencyField" text="0.0039">
+                                       <font>
+                                          <Font name="JetBrains Mono Regular" size="11.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label text="Количество гармоник">
+                                       <font>
+                                          <Font name="JetBrains Mono Regular" size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="harmonicsCountField" text="1">
+                                       <font>
+                                          <Font name="JetBrains Mono Regular" size="11.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                     <font>
+                        <Font name="JetBrains Mono Bold" size="11.0" />
+                     </font>
+                  </TitledPane>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGenerateButton" text="Сгенерировать сигнал">
+                     <font>
+                        <Font name="JetBrains Mono Bold" size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.5" left="10.5" right="10.5" top="10.5" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
    </children>
 </HBox>

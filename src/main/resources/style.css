@@ -1,7 +1,91 @@
+.root, .chart-plot-background {
+    -fx-background-color: #edeef0;
+}
+
+.titled-pane > *.content {
+    -fx-background-color: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * AreaChart                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+
 .default-color0.chart-area-symbol {
     -fx-background-radius: 30px;
 }
 
 .default-color1.chart-area-symbol {
     -fx-background-radius: 60px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TitledPane                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.titled-pane {
+    -fx-border-color: dce1e6;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.titled-pane > .title {
+    -fx-background-radius: 3 3 0 0;
+}
+
+.titled-pane > .title:hover {
+    -fx-color: white;
+}
+
+.titled-pane > *.content {
+    -fx-background-radius: 0 0 3 3;
+}
+
+.titled-pane > .title, *.content {
+    -fx-border-width: 0;
+    -fx-background-color: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Button                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.button {
+    -fx-padding: 7px 16px 8px;
+    -fx-background-color: #5181b8;
+    -fx-text-fill: white;
+    -fx-background-insets: 0;
+}
+
+.button:hover {
+    -fx-background-color: #5181b8cc;
+}
+
+.button:focused {
+    -fx-background-insets: 0;
+}
+
+.button:armed {
+    -fx-background-insets: 1;
+}
+
+.text-input {
+    -fx-background-color: white;
+    -fx-border-color: #d3d9de;
+    -fx-border-radius: 3px;
+}
+
+.scroll-pane {
+    -fx-background-color: #edeef0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #edeef0;
 }
