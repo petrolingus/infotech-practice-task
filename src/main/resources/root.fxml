@@ -24,7 +24,7 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </AreaChart>
-            <AreaChart fx:id="autocorrelationChart" createSymbols="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
+            <AreaChart fx:id="autocorrelationChart" animated="false" createSymbols="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
                <xAxis>
                   <NumberAxis side="BOTTOM" />
                </xAxis>
@@ -32,7 +32,7 @@
                   <NumberAxis side="LEFT" />
                </yAxis>
             </AreaChart>
-            <AreaChart fx:id="spectrumChart" legendVisible="false">
+            <AreaChart fx:id="spectrumChart" animated="false" createSymbols="false" legendVisible="false">
               <xAxis>
                 <NumberAxis side="BOTTOM" />
               </xAxis>
