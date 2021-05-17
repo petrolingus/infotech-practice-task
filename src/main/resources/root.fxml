@@ -24,7 +24,7 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </AreaChart>
-            <AreaChart fx:id="autocorrelationChart" animated="false" createSymbols="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
+            <AreaChart fx:id="autocorrelationChart" animated="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
                <xAxis>
                   <NumberAxis side="BOTTOM" />
                </xAxis>
@@ -32,7 +32,7 @@
                   <NumberAxis side="LEFT" />
                </yAxis>
             </AreaChart>
-            <AreaChart fx:id="spectrumChart" animated="false" createSymbols="false" legendVisible="false">
+            <AreaChart fx:id="spectrumChart" animated="false" legendVisible="false">
               <xAxis>
                 <NumberAxis side="BOTTOM" />
               </xAxis>
@@ -164,7 +164,7 @@
                                           <Font name="JetBrains Mono Regular" size="11.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="samplesCountField" text="1024">
+                                    <TextField fx:id="samplesCountField" text="512">
                                        <font>
                                           <Font name="JetBrains Mono Regular" size="11.0" />
                                        </font>
@@ -211,6 +211,12 @@
                         <Font name="JetBrains Mono Bold" size="11.0" />
                      </font>
                   </Button>
+                  <Label text="Noise" />
+                  <TextField fx:id="noiseField" text="10" />
+                  <Label text="Threshold" />
+                  <TextField fx:id="thresholdField" text="1000" />
+                  <Label text="Start Sample" />
+                  <TextField fx:id="startField" text="10" />
                </children>
                <padding>
                   <Insets bottom="10.5" left="10.5" right="10.5" top="10.5" />
