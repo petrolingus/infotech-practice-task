@@ -12,14 +12,14 @@
  *                                                                             *
  ******************************************************************************/
 
+.default-color0.chart-area-symbol { -fx-background-color: #FF9200, white; }
+.default-color1.chart-area-symbol { -fx-background-color: #0180E2, white; }
 
-.default-color0.chart-area-symbol {
-    -fx-background-radius: 30px;
-}
+.default-color0.chart-series-area-line { -fx-stroke: #FF9200; }
+.default-color1.chart-series-area-line { -fx-stroke: #0180E2; }
 
-.default-color1.chart-area-symbol {
-    -fx-background-radius: 60px;
-}
+.default-color0.chart-series-area-fill { -fx-fill: #FF920044; }
+.default-color1.chart-series-area-fill { -fx-fill: #0180E244; }
 
 /*******************************************************************************
  *                                                                             *

@@ -18,26 +18,26 @@
          <children>
             <AreaChart fx:id="signalChart" animated="false" createSymbols="false" legendVisible="false">
               <xAxis>
-                <NumberAxis side="BOTTOM" />
+                <NumberAxis autoRanging="false" minorTickCount="4" side="BOTTOM" tickUnit="32.0" upperBound="512.0" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis maxWidth="30.0" minWidth="30.0" prefWidth="30.0" side="LEFT" />
               </yAxis>
             </AreaChart>
-            <AreaChart fx:id="autocorrelationChart" animated="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
+            <AreaChart fx:id="autocorrelationChart" animated="false" createSymbols="false" layoutX="10.0" layoutY="10.0" legendVisible="false">
                <xAxis>
-                  <NumberAxis side="BOTTOM" />
+                  <NumberAxis autoRanging="false" minorTickCount="4" side="BOTTOM" tickUnit="32.0" upperBound="512.0" />
                </xAxis>
                <yAxis>
-                  <NumberAxis side="LEFT" />
+                  <NumberAxis maxWidth="30.0" minWidth="30.0" prefWidth="30.0" side="LEFT" />
                </yAxis>
             </AreaChart>
-            <AreaChart fx:id="spectrumChart" animated="false" legendVisible="false">
+            <AreaChart fx:id="spectrumChart" animated="false" createSymbols="false" legendVisible="false">
               <xAxis>
-                <NumberAxis side="BOTTOM" />
+                <NumberAxis autoRanging="false" minorTickCount="4" side="BOTTOM" tickUnit="32.0" upperBound="512.0" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis maxWidth="30.0" minWidth="30.0" prefWidth="30.0" side="LEFT" />
               </yAxis>
             </AreaChart>
          </children>
@@ -220,12 +220,7 @@
                         <Font name="JetBrains Mono Bold" size="11.0" />
                      </font>
                   </TitledPane>
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGenerateButton" text="Сгенерировать сигнал">
-                     <font>
-                        <Font name="JetBrains Mono Bold" size="11.0" />
-                     </font>
-                  </Button>
-                  <TitledPane>
+                  <TitledPane text="Дополнительные параметры">
                      <content>
                         <VBox spacing="6.5">
                            <children>
@@ -245,7 +240,7 @@
                               </VBox>
                               <VBox spacing="4.0">
                                  <children>
-                                    <Label text="Start Sample">
+                                    <Label text="Начальный отсчет коррелограммы">
                                        <font>
                                           <Font name="JetBrains Mono Regular" size="11.0" />
                                        </font>
@@ -261,6 +256,16 @@
                         </VBox>
                      </content>
                   </TitledPane>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGenerateButton" text="Сгенерировать сигнал">
+                     <font>
+                        <Font name="JetBrains Mono Bold" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCleanButton" text="Очистить с помощью СВД">
+                     <font>
+                        <Font name="JetBrains Mono Bold" size="11.0" />
+                     </font>
+                  </Button>
                </children>
                <padding>
                   <Insets bottom="10.5" left="10.5" right="10.5" top="10.5" />

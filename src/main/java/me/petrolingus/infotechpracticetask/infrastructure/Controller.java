@@ -1,6 +1,7 @@
 package me.petrolingus.infotechpracticetask.infrastructure;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextField;
@@ -71,8 +72,6 @@ public class Controller {
         double minPhase = Double.parseDouble(minPhaseField.getText());
         double maxPhase = Double.parseDouble(maxPhaseField.getText());
 
-        int start = Integer.parseInt(startField.getText());
-
         HarmonicGenerator harmonicGenerator = new HarmonicGenerator(
                 minAmplitude, maxAmplitude, minFrequency, maxFrequency, minPhase, maxPhase, harmonicsCount);
 
@@ -92,6 +91,18 @@ public class Controller {
         signalChart.getData().clear();
         signalChart.getData().add(signalSeries);
 
+        onCleanButton();
+    }
+
+    public void onCleanButton() {
+
+        ObservableList<XYChart.Data<Number, Number>> data = signalChart.getData().get(0).getData();
+
+        double[] signalData = new double[data.size()];
+        for (int i = 0; i < data.size(); i++) {
+            signalData[i] = data.get(i).getYValue().doubleValue();
+        }
+
         double[] autocorrelation = new double[signalData.length];
         for (int m = 0; m < autocorrelation.length; m++) {
             double value = 0;
@@ -103,6 +114,7 @@ public class Controller {
             }
             autocorrelation[m] = value;
         }
+        int start = Integer.parseInt(startField.getText());
         XYChart.Series<Number, Number> autocorrelationSeries = arrayToSeries(autocorrelation, start);
         autocorrelationChart.getData().clear();
         autocorrelationChart.getData().add(autocorrelationSeries);
@@ -170,6 +182,7 @@ public class Controller {
         }
         XYChart.Series<Number, Number> spectrumSeries2 = arrayToSeries(spectrum2, 0);
         spectrumChart.getData().add(spectrumSeries2);
+
     }
 
     private XYChart.Series<Number, Number> arrayToSeries(double[] data, int start) {
@@ -179,4 +192,5 @@ public class Controller {
         }
         return new XYChart.Series<>(FXCollections.observableList(list));
     }
+
 }
